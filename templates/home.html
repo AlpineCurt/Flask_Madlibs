@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}MaDlIbS!{% endblock %}
+
+{% block content %}
+<h1>Madlibs!</h1>
+<form action="/story_prompts">
+    <label for="story_select">Choose your story:</label>
+    <select name="story" id="story_select">
+        {% for story in stories.keys() %}
+        <option value="{{story}}">{{story}}</option>
+        {% endfor %}
+    </select><br>
+    <input type="submit">
+</form>
+{% endblock %}

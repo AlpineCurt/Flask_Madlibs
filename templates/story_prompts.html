@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}MadLibs!{% endblock %}
+
+{% block content %}
+<h1>Fill in the prompts for {{story_title}}</h1>
+<form action="/your_story">
+    {% for prompt in prompts %}
+    <input type="text" placeholder="{{prompt}}" name="{{prompt}}"><br>
+    {% endfor %}
+    <input type="submit">
+</form>
+{% endblock %}
